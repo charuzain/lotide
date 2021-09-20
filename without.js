@@ -1,4 +1,4 @@
-const eqArrays = function(array1 , array2) {
+/*const eqArrays = function(array1 , array2) {
   let isEqual = true;
   
   if (array1.length === array2.length) {
@@ -10,7 +10,7 @@ const eqArrays = function(array1 , array2) {
       }
     }
   } else {
-    isEqual = false; 
+    isEqual = false; // here i have done that
   }
   return isEqual;
 };
@@ -20,7 +20,18 @@ const assertArraysEqual = function(array1 , array2) {
     console.log(`✅ Assertion Passed: ${array1} === ${array2}`);
   } else
     console.log(`⭕ Assertion Failed: ${array1} !== ${array2}`);
-};
+}; */
 
-assertArraysEqual([2,3,4,5],[2,3,4,5]);
-assertArraysEqual([2,3,4],[2,3,4,5]);
+const without = function(source,itemsToRemove){
+let newArray =[];
+let addValue = true;
+for(let i = 0;i<source.length;i++){
+  for(let j=0;j<itemsToRemove.length;i++){  //[5,7,9][6,5,4]==[7,9]
+    if(source[i]===itemsToRemove[j]){
+      addValue = false;
+      break;
+    }
+  }
+}
+return newArray;
+}

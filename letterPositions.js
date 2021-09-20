@@ -1,3 +1,19 @@
+const letterPositions = function(sentence) {
+  const results = {};
+
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] === " ") {
+      continue;
+    } else if (results[sentence[i]]) {
+      results[sentence[i]].push(i);
+    } else {
+      results[sentence[i]] = [i];
+    }
+  }
+  return results;
+};
+
+
 const eqArrays = function(array1 , array2) {
   let isEqual = true;
   
@@ -10,7 +26,7 @@ const eqArrays = function(array1 , array2) {
       }
     }
   } else {
-    isEqual = false; 
+    isEqual = false;
   }
   return isEqual;
 };
@@ -22,5 +38,6 @@ const assertArraysEqual = function(array1 , array2) {
     console.log(`⭕ Assertion Failed: ${array1} !== ${array2}`);
 };
 
-assertArraysEqual([2,3,4,5],[2,3,4,5]);
-assertArraysEqual([2,3,4],[2,3,4,5]);
+assertArraysEqual(letterPositions("hello").e, [1]);
+assertArraysEqual(letterPositions("hello hi").l, [2,3]);
+assertArraysEqual(letterPositions("hello hi").o, [2,3]);
