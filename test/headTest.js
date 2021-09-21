@@ -20,6 +20,7 @@ describe("#head",()=>{
 
   it("empty array should return undefined " ,()=>{
     assert.isUndefined(head([]));
+    //assert.strictEqual(head([])), undefined);
       
   });
   
