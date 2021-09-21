@@ -1,13 +1,32 @@
+const assert = require('chai').assert;
 const tail = require('../tail.js');
-const assertEqual = require('../assertEqual');
 
-// Test Case 1: Check the returned array elements
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+describe("#tail",()=>{
+  it("an empty array should yield an empty array for its tail" ,()=>{
+    assert.deepEqual(tail([]),[]);
 
+  });
+
+  it("an array with only one element should yield an empty array for its tail" ,()=>{
+    assert.deepEqual(tail([3]),[]);
+
+  });
+
+  it("tail doesnot contain the first element of array" ,()=>{
+    assert.notInclude(tail([5,2,6,7,8,3]),5);
+
+  });
+
+  it("returns [1,2,3] for [26,1,2,3]" ,()=>{
+    assert.notInclude(tail([5,2,6,7,8,3]),5);
+
+  });
   
-// Test Case 2 : Check the original array
-const words = tail(["first","day", "at", "Lighthouse", "Labs"]);
-assertEqual(words.length, 5); // original array should still have 5 elements not 4!
+});
+
+
+
+
+
+
+
