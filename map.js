@@ -5,7 +5,9 @@ const map = function(array , callback) {
   }
   return results;
 };
+module.exports = map;
 
+/*
 const eqArrays = function(array1 , array2) {
   let isEqual = true;
   if (array1.length === array2.length) {
@@ -32,3 +34,4 @@ assertArraysEqual(map(["ground", "control","to", "major", "tom"],word => word[0]
 assertArraysEqual(map(["hi","how","are","you"],word=>word.length),[2,3,3,3]);
 assertArraysEqual(map(["hi","hello"],word=>word.toUpperCase()),["H","H"]);
 
+*/
