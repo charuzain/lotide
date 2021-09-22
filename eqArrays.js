@@ -1,4 +1,3 @@
-
 const eqArrays = function(array1 , array2) {
   let isEqual = true;
   if (array1.length === array2.length) {
@@ -16,6 +15,7 @@ const eqArrays = function(array1 , array2) {
   return isEqual;
 };
 module.exports = eqArrays;
+
 /* // Test Cases
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);//when two arrays are equal
 assertEqual(eqArrays([2, 3], [1, 2, 3]), false);//When 2 arrays are of different length
